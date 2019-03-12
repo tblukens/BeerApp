@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BeerApp.API.Data;
 using BeerApp.API.Dtos;
+using BeerApp.API.Helpers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BeerApp.API.Controllers
 {
+    [ServiceFilter(typeof(LogUserActivity))]
     [Authorize]
     [Route("api/[controller]")]
     [ApiController]
